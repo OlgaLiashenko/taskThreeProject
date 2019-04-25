@@ -14,6 +14,7 @@ public class WordCounter implements Counter {
         }
     }
 
+
     @Override
     public int getResult() {
         return result;
