@@ -1,8 +1,7 @@
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import wordCount.counters.CharacterCounter;
-import wordCount.counters.CharacterCounterDataProvider;
 
 import static org.testng.Assert.*;
 
@@ -11,13 +10,18 @@ public class CharacterCounterTest {
 
     private CharacterCounter counter;
 
+    @DataProvider(name = "methodDataProvider")
+    public static Object[][] methodDataProvider() {
+        return new Object[][]{{"1", 1}, {null, 0}, {" ", 0}, {"", 0}, {" ? i % / 2., ", 7}};
+    }
+
     @BeforeMethod
     public void createObjectCharacterCounter() {
         //given
         counter = new CharacterCounter();
     }
 
-    @Test(dataProvider = "methodDataProvider", dataProviderClass = CharacterCounterDataProvider.class)
+    @Test(dataProvider = "methodDataProvider")
     public void charCounterDataProvider(String input, int result) {
         //when
         counter.readLine(input);

@@ -6,7 +6,7 @@ public class WordCounter implements Counter {
     @Override
     public void readLine(String line) {
         if (line == null || line.equals("")) {
-            result = 0;
+            return;
         } else {
             line = line.trim();
             String[] array = line.split("\\s+");

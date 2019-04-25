@@ -39,14 +39,6 @@ public class WordCounterTest {
     }
 
     @Test
-    public void wordsWithSpecialCharacters() {
-        //when
-        counter.readLine(" one * plus _ == ... ");
-        //then
-        assertEquals(6, counter.getResult());
-    }
-
-    @Test
     public void multipleWhiteSpaces() {
         //when
         counter.readLine("   one *  plus _    ==    ");

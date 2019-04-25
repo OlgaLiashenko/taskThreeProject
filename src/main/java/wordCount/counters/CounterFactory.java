@@ -9,6 +9,7 @@ public class CounterFactory {
             case "-w":
                 counter = new WordCounter();
                 break;
+              //  return new WordCounter(); //without Counter counter;
             case "-l":
                 counter = new LineCounter();
                 break;

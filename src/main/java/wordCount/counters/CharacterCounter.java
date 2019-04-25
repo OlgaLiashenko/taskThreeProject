@@ -7,7 +7,7 @@ public class CharacterCounter implements Counter {
     @Override
     public void readLine(String line) {
         if (line == null || line.equals("")) {
-            result = 0;
+            return;
         } else {
             String lineNoSpaces = line.replaceAll("\\s+", "");
             result += lineNoSpaces.length();

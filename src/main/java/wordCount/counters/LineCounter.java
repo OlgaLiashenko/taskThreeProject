@@ -5,10 +5,7 @@ public class LineCounter implements Counter {
 
     @Override
     public void readLine(String line) {
-        if (line == null) {
-            result = 0;
-
-        } else {
+        if (line != null) {
             result = result + 1;
         }
     }
